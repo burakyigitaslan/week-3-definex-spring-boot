@@ -3,6 +3,7 @@ package com.patika.onlineshopping.client.dto.request;
 import com.patika.onlineshopping.dto.request.InvoiceRequest;
 import lombok.*;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 @Getter
@@ -10,7 +11,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class InvoiceServiceRequest {
+public class InvoiceServiceRequest implements Serializable {
     private String name;
     private LocalDate invoiceDate;
     private Double totalAmount;

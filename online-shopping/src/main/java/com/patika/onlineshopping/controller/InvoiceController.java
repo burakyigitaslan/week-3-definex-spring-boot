@@ -17,9 +17,9 @@ public class InvoiceController {
     private final InvoiceService invoiceService;
 
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
-    public ResponseEntity<InvoiceServiceResponse> save(@RequestBody InvoiceRequest request) {
-        return ResponseEntity.ok().body(invoiceService.save(request));
+    public ResponseEntity<Void> save(@RequestBody InvoiceRequest request) {
+        invoiceService.save(request);
+        return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     @GetMapping
