@@ -1,0 +1,14 @@
+server:
+  port: 8085
+
+spring:
+  application:
+    name: online-shopping-gw
+  cloud:
+    gateway:
+      routes:
+      - id: online-shopping
+        uri: http://localhost:8080
+        predicates:
+          - Path=/api/**
+
